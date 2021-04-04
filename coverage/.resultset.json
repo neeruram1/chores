@@ -246,6 +246,7 @@
           1,
           1,
           1,
+          1,
           null
         ]
       },
@@ -274,10 +275,12 @@
       "/Users/nirupamaram/apps/chores/app/models/delegate.rb": {
         "lines": [
           1,
+          1,
+          1,
           null
         ]
       }
     },
-    "timestamp": 1617556758
+    "timestamp": 1617557115
   }
 }

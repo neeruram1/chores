@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_04_171959) do
+ActiveRecord::Schema.define(version: 2021_04_04_172447) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,10 +22,16 @@ ActiveRecord::Schema.define(version: 2021_04_04_171959) do
     t.integer "priority"
     t.string "category"
     t.float "est_cost"
+    t.bigint "delegate_id"
+    t.index ["delegate_id"], name: "index_chores_on_delegate_id"
   end
 
   create_table "delegates", force: :cascade do |t|
     t.string "name"
+    t.bigint "chore_id"
+    t.index ["chore_id"], name: "index_delegates_on_chore_id"
   end
 
+  add_foreign_key "chores", "delegates"
+  add_foreign_key "delegates", "chores"
 end
